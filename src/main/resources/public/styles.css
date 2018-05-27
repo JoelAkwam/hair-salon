@@ -1,0 +1,102 @@
+body{
+  background-image: url(bg.jpg);
+  background-size: cover;
+  color: white;
+}
+
+h1{
+  font-family: 'Lobster', cursive;
+}
+
+.box{
+  background-color: #040405;
+  margin-top: 10%;
+  padding: 2%;
+  height: 400px;
+}
+
+input, .bt, select{
+  width: 70%;
+  margin: 1%;
+  height: 40px;
+  padding: 1%;
+}
+
+input, select{
+  background-color: #0d0d11;
+  border: none;
+  outline: none;
+}
+
+.bt{
+  margin-top: 5%;
+  background-color: #a52704;
+  border: none;
+  border-radius: 10px;
+}
+
+.bt:hover{
+  cursor: pointer;
+  background-color: white;
+  color: black;
+}
+
+.top{
+  height: 250px;
+  background-color: #040405;
+  font-size: 20px;
+  padding: 2%;
+}
+
+.success{
+  background-color: #0d0d11;
+  width: 50%;
+  height: 250px;
+  text-align: center;
+  margin-left: 25%;
+  margin-top: -10%;
+  padding-top: 3%;
+  font-size: 50px;
+}
+
+#tick{
+  color: #1d5107;
+}
+
+.rm{
+  border: none;
+  background-color: transparent;
+  color: #393a38;
+}
+
+.rm:hover{
+  cursor: pointer;
+  color: red;
+}
+
+ul{
+  list-style-type: none;
+  margin: 0;
+  padding-left: 35%;
+  overflow: hidden;
+  background-color: #333;
+  font-size: 18px;
+}
+
+li{
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover{
+  background-color:  black;
+  text-decoration: none;
+  color:white;
+}
