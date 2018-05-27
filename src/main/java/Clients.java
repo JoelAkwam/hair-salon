@@ -49,16 +49,4 @@ public class Clients{
           .executeUpdate();
         }
       }
-
-      public void update(String client_fname, String client_lname, int stylist_id) {
-        try(Connection con = DB.sql2o.open()) {
-          String sql = "UPDATE clients SET client_id =:client_id, client_fname = :client_fname,client_lname = :client_lname, stylist_id =:stylist_id WHERE client_id = :client_id";
-          con.createQuery(sql)
-            .addParameter("client_fname", client_fname)
-            .addParameter("client_lname", client_lname)
-            .addParameter("stylist_id", stylist_id)
-            .addParameter("client_id", client_id)
-            .executeUpdate();
-        }
-      }
 }
