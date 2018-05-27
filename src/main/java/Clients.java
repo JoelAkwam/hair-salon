@@ -5,13 +5,14 @@ import org.sql2o.*;
 public class Clients{
     private String client_fname;
     private String client_lname;
+    private String client_style;
     private int client_id;
     private int stylist_id;
 
-    public Clients(String client_fname, String client_lname, int stylist_id){
+    public Clients(String client_fname, String client_lname, String client_style){
         this.client_fname = client_fname;
         this.client_lname = client_lname;
-        this.stylist_id = stylist_id;
+        this.client_style = client_style;
     }
 
     public String getClientFirstame(){
@@ -20,6 +21,10 @@ public class Clients{
 
     public String getClientLastname(){
         return client_lname;
+    }
+
+    public String getStyle(){
+      return client_style;
     }
 
     public static List<Clients> all() {

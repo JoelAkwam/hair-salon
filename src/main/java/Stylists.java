@@ -67,7 +67,7 @@ public class Stylists{
             .getKey();
         }
       }
-      public void delete() {
+      public void deleteStylist() {
        try(Connection con = DB.sql2o.open()) {
        String sql = "DELETE FROM stylists WHERE stylist_id = :id;";
        con.createQuery(sql)

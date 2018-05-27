@@ -4,7 +4,7 @@
             <div class="col-md-6">
                 <h1>Stylist</h1>
                 <hr>
-                <form action="/list">
+                <form action="/list" method="post">
                     <input type="text" id="stylist_fname" name="stylist_fname" placeholder="First Name">
                     <input type="text" id="stylist_lname" name="stylist_ltname" placeholder="Last Name"><br>
                     <select name="specialty">
@@ -19,10 +19,10 @@
             <div class="col-md-6">
                 <h1>Client</h1>
                 <hr>
-                <form action="/list">
+                <form action="/list" method="post">
                     <input type="text" id="client_fname" name="client_fname" placeholder="First Name">
                     <input type="text" id="client_lname" name="client_lname" placeholder="Last Name">
-                    <select name="specialty">
+                    <select name="client_style">
                         <option label="">--Style--</option>
                         <option value="Dreadlocks">Dreadlocks</option>
                         <option value="Braids">Braids</option>
