@@ -1,51 +1,36 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-    crossorigin="anonymous">
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-  <title>Hair Salon</title>
-</head>
-
-<body>
-  <div class="container-fluid">
+<div class="container-fluid">
     <div class="box">
-      <div class="row">
-        <div class="col-md-6">
-          <h1>Stylist</h1>
-          <hr>
-          <form action="">
-            <input type="text" id="stylist_ftname" name="stylist_fname" placeholder="First Name">
-            <input type="text" id="stylist_lname" name="stylist_ltname" placeholder="Last Name"><br>
-            <select name="specialty">
-              <option label="">--Specialty--</option>
-              <option>Dreadlocks</option>
-              <option>Braids</option>
-              <option>Weave</option>
-            </select>
-            <button type="submit" class="bt">Add Stylist</button>
-          </form>
+        <div class="row">
+            <div class="col-md-6">
+                <h1>Stylist</h1>
+                <hr>
+                <form action="">
+                    <input type="text" id="stylist_ftname" name="stylist_fname" placeholder="First Name">
+                    <input type="text" id="stylist_lname" name="stylist_ltname" placeholder="Last Name"><br>
+                    <select name="specialty">
+                        <option label="">--Specialty--</option>
+                        <option>Dreadlocks</option>
+                        <option>Braids</option>
+                        <option>Weave</option>
+                    </select>
+                    <button type="submit" class="bt">Add Stylist</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <h1>Client</h1>
+                <hr>
+                <form>
+                    <input type="text" id="client_fname" name="client_fname" placeholder="First Name">
+                    <input type="text" id="client_lname" name="client_lname" placeholder="Last Name">
+                    <select name="specialty">
+                        <option label="">--Style--</option>
+                        <option>Dreadlocks</option>
+                        <option>Braids</option>
+                        <option>Weave</option>
+                    </select>
+                    <button type="submit" class="bt">Add client</button>
+                </form>
+            </div>
         </div>
-        <div class="col-md-6">
-          <h1>Client</h1>
-          <hr>
-          <form>
-            <input type="text" id="client_fname" name="client_fname" placeholder="First Name">
-            <input type="text" id="client_lname" name="client_lname" placeholder="Last Name">
-            <select name="specialty">
-                <option label="">--Style--</option>
-                <option>Dreadlocks</option>
-                <option>Braids</option>
-                <option>Weave</option>
-              </select>
-              <button type="submit" class="bt">Add client</button>
-          </form>
-        </div>
-      </div>
     </div>
-  </div>
-</body>
-
-</html>
+</div>
