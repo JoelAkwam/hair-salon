@@ -4,14 +4,14 @@
             <div class="col-md-6">
                 <h1>Stylist</h1>
                 <hr>
-                <form action="">
+                <form action="/list">
                     <input type="text" id="stylist_ftname" name="stylist_fname" placeholder="First Name">
                     <input type="text" id="stylist_lname" name="stylist_ltname" placeholder="Last Name"><br>
                     <select name="specialty">
                         <option label="">--Specialty--</option>
-                        <option>Dreadlocks</option>
-                        <option>Braids</option>
-                        <option>Weave</option>
+                        <option value="Dreadlocks">Dreadlocks</option>
+                        <option value="Braids">Braids</option>
+                        <option value="Weave">Weave</option>
                     </select>
                     <button type="submit" class="bt">Add Stylist</button>
                 </form>
@@ -19,14 +19,14 @@
             <div class="col-md-6">
                 <h1>Client</h1>
                 <hr>
-                <form>
+                <form action="/list">
                     <input type="text" id="client_fname" name="client_fname" placeholder="First Name">
                     <input type="text" id="client_lname" name="client_lname" placeholder="Last Name">
                     <select name="specialty">
                         <option label="">--Style--</option>
-                        <option>Dreadlocks</option>
-                        <option>Braids</option>
-                        <option>Weave</option>
+                        <option value="Dreadlocks">Dreadlocks</option>
+                        <option value="Braids">Braids</option>
+                        <option value="Weave">Weave</option>
                     </select>
                     <button type="submit" class="bt">Add client</button>
                 </form>
