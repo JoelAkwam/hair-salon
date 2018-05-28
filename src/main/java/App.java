@@ -6,8 +6,6 @@ import static spark.Spark.*;
 
 public class App{
     public static void main(String[] args){
-        staticFileLocation("/public");
-        String layout = "templates/layout.vtl";
 
         ProcessBuilder process = new ProcessBuilder();
         Integer port;
@@ -16,8 +14,10 @@ public class App{
             } else {
                 port = 4567;
         }
-
         setPort(port);
+
+        staticFileLocation("/public");
+        String layout = "templates/layout.vtl";
 
         get("/", (request, respond) -> {
             Map<String, Object> model = new HashMap<String, Object>();
