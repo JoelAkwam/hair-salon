@@ -37,6 +37,32 @@ public class App{
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
 
-        
+        get("/list", (request, respond)->{
+            Map<String, Object> model = new HashMap<String, Object>();
+            model.put("stylists", Stylists.all());
+            model.put("clients", Clients.all());
+            model.put("template", "templates/list.vtl");
+            return new ModelAndView(model, layout);
+        }, new VelocityTemplateEngine());
+
+        post("/deleteStylist/:id", (request, respond)->{
+            Map<String, Object> model = new HashMap<String, Object>();
+            Stylists stylist = Stylists.find(Integer.parseInt(request.params(":id")));
+            stylist.deleteStylist();
+            model.put("stylists", Stylists.all());
+            model.put("clients", Clients.all());
+            model.put("template", "templates/list.vtl");
+            return new ModelAndView(model, layout);
+        }, new VelocityTemplateEngine());
+
+        post("/deleteClient/:id", (request, respond)->{
+            Map<String, Object> model = new HashMap<String, Object>();
+            Clients client = Clients.find(Integer.parseInt(request.params(":id")));
+            client.deleteClient();
+            model.put("stylists", Stylists.all());
+            model.put("clients", Clients.all());
+            model.put("template", "templates/list.vtl");
+            return new ModelAndView(model, layout);
+        }, new VelocityTemplateEngine());
     }
 }

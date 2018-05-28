@@ -6,7 +6,7 @@ public class Stylists{
     private String stylist_fname;
     private String stylist_lname;
     private String specialty;
-    private int stylist_id;
+    private int id;
 
     public Stylists(String stylist_fname, String stylist_lname, String specialty){
         this.stylist_fname = stylist_fname;
@@ -23,7 +23,7 @@ public class Stylists{
     }
 
     public int getId(){
-        return stylist_id;
+        return id;
     }
 
     public String getSpecialty(){
@@ -31,7 +31,7 @@ public class Stylists{
     }
 
     public static List<Stylists> all() {
-        String sql = "SELECT stylist_id, stylist_fname,stylist_lname,specialty FROM stylists";
+        String sql = "SELECT id, stylist_fname,stylist_lname,specialty FROM stylists";
         try(Connection con = DB.sql2o.open()) {
           return con.createQuery(sql).executeAndFetch(Stylists.class);
         }
@@ -39,9 +39,9 @@ public class Stylists{
 
       public static Stylists find(int id) {
         try(Connection con = DB.sql2o.open()) {
-          String sql = "SELECT * FROM stylists where stylist_id=:stylist_id";
+          String sql = "SELECT * FROM stylists where id=:id";
           Stylists stylists = con.createQuery(sql)
-            .addParameter("stylist_id", id)
+            .addParameter("id", id)
             .executeAndFetchFirst(Stylists.class);
           return stylists;
         }
@@ -49,9 +49,9 @@ public class Stylists{
 
       public List<Clients> getClients() {
         try(Connection con = DB.sql2o.open()) {
-          String sql = "SELECT * FROM clients where stylist_id=:id";
+          String sql = "SELECT * FROM clients where id=:id";
           return con.createQuery(sql)
-            .addParameter("id", this.stylist_id)
+            .addParameter("id", this.id)
             .executeAndFetch(Clients.class);
         }
       }
@@ -59,7 +59,7 @@ public class Stylists{
       public void save() {
         try(Connection con = DB.sql2o.open()) {
           String sql = "INSERT INTO stylists(stylist_fname,stylist_lname,specialty) VALUES (:stylist_fname,:stylist_lname,:specialty)";
-          this.stylist_id = (int) con.createQuery(sql, true)
+          this.id = (int) con.createQuery(sql, true)
             .addParameter("stylist_fname", this.stylist_fname)
             .addParameter("stylist_lname", this.stylist_lname)
             .addParameter("specialty", this.specialty)
@@ -69,14 +69,10 @@ public class Stylists{
       }
       public void deleteStylist() {
        try(Connection con = DB.sql2o.open()) {
-       String sql = "DELETE FROM stylists WHERE stylist_id = :id;";
+       String sql = "DELETE FROM stylists WHERE id = :id;";
        con.createQuery(sql)
-         .addParameter("id", stylist_id)
+         .addParameter("id", id)
          .executeUpdate();
        }
-       try(Connection con = DB.sql2o.open()) {
-         String sql = "UPDATE clients SET stylist_id = 0 WHERE stylist_id = :id;";
-         con.createQuery(sql).addParameter("id", stylist_id).executeUpdate();
-         }
-       }
+}
 }

@@ -3,17 +3,24 @@
         <div class="col-md-6">
             <h1>Stylists</h1>
             <hr>
-            <button type="submit" class="rm">Remove
-                <span class="glyphicon glyphicon-remove-sign"></span></button>
+            #foreach($stylist in $stylists)
+            <p>$stylist.getStylistFirstname() $stylist.getStylistLastname() | $stylist.getSpecialty()</p>
+            <form action="/deleteStylist/$stylist.getId()" method="post">
+                <button type="submit" class="rm">Remove<span class="glyphicon glyphicon-remove-sign"></span></button>
+            </form>
             <hr>
+             #end
         </div>
         <div class="col-md-6">
             <h1>Clients</h1>
             <hr>
-            <p></p>
-            <button type="submit" class="rm">Remove
-                <span class="glyphicon glyphicon-remove-sign"></span></button>
+            #foreach($client in $clients)
+            <p>$client.getClientFirstame() $client.getClientLastname() | $client.getStyle()</p>
+            <form action="/deleteClient/$client.getId()" method="post">
+                <button type="submit" class="rm">Remove<span class="glyphicon glyphicon-remove-sign"></span></button>
+            </form>
             <hr>
+            #end
         </div>
     </div>
 </div>
