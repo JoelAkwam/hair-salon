@@ -28,7 +28,7 @@ public class Clients{
     }
 
     public static List<Clients> all() {
-        String sql = "SELECT client_id, client_fname,client_lname,stylist_id FROM clients";
+        String sql = "SELECT client_id, client_fname,client_lname,client_style FROM clients";
         try(Connection con = DB.sql2o.open()) {
           return con.createQuery(sql).executeAndFetch(Clients.class);
         }
@@ -36,11 +36,11 @@ public class Clients{
 
       public void save() {
         try(Connection con = DB.sql2o.open()) {
-          String sql = "INSERT INTO clients(client_fname, client_lname,stylist_id) VALUES (:client_fname, :client_lname,:stylist_id)";
+          String sql = "INSERT INTO clients(client_fname, client_lname,client_style) VALUES (:client_fname, :client_lname,:client_style)";
           this.client_id = (int) con.createQuery(sql, true)
             .addParameter("client_fname", this.client_fname)
             .addParameter("client_lname", this.client_lname)
-            .addParameter("stylist_id", this.stylist_id)
+            .addParameter("client_style", this.client_style)
             .executeUpdate()
             .getKey();
         }

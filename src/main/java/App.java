@@ -12,10 +12,10 @@ public class App{
         get("/", (request, respond) -> {
             Map<String, Object> model = new HashMap<String, Object>();
             model.put("template", "templates/index.vtl");
-            new ModelAndView(model, layout);
+            return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
 
-        post("/list", (request, respond) ->{
+        post("/stylist", (request, respond) ->{
             Map<String, Object> model = new HashMap<String, Object>();
             String stylist_fname = request.queryParams("stylist_fname");
             String stylist_lname = request.queryParams("stylist_lname");
@@ -26,7 +26,7 @@ public class App{
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
 
-        post("/list", (request, respond)->{
+        post("/client", (request, respond)->{
             Map<String, Object> model = new HashMap<String, Object>();
             String client_fname = request.queryParams("client_fname");
             String client_lname = request.queryParams("client_lname");
@@ -36,5 +36,7 @@ public class App{
             model.put("template", "templates/success-client.vtl");
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
+
+        
     }
 }
